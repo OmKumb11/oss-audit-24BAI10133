@@ -1,31 +1,78 @@
 # oss-audit-24BAI10133
-# Open Source Software Audit - Python
+# oss-audit-24BAI10133
 
-### Student Details
-* [cite_start]**Name:** Om Pramod Kumbhar [cite: 6]
-* [cite_start]**Registration Number:** 24BAI10133 [cite: 6]
-* [cite_start]**Course:** Open Source Software (NGMC) [cite: 3, 4]
-* [cite_start]**Software Audited:** Python (PSF License) [cite: 6, 11]
+**Student Name:** Om Pramod Kumbhar  
+**Registration Number:** 24BAI10133  
+**Course:** Open Source Software (OSS NGMC)  
+**Chosen Software:** Python  
 
 ---
 
-## Project Overview
-[cite_start]This repository contains a comprehensive audit of Python as an open-source tool, covering its history, licensing, and ecosystem. [cite: 2, 11, 15] [cite_start]It includes five Bash scripts designed to demonstrate practical interaction with an open-source environment on Ubuntu 24.04.1 LTS. [cite: 17, 73]
+## Scripts Overview
 
-## Script Descriptions
-1. [cite_start]**script1.sh (System Identity Report):** Generates a formatted report of the system's Linux distribution, kernel version, and uptime. [cite: 131, 132]
-2. [cite_start]**script2.sh (FOSS Package Inspector):** Verifies if Python 3 is installed and retrieves package metadata using `dpkg`. [cite: 163, 164]
-3. [cite_start]**script3.sh (Disk & Permission Auditor):** Iterates through system directories to report on permissions and disk usage. [cite: 193, 194]
-4. [cite_start]**script4.sh (Log File Analyzer):** Scans system log files (like `dpkg.log`) for specific keywords and counts occurrences. [cite: 226, 227]
-5. [cite_start]**script5.sh (Manifesto Generator):** An interactive script that collects user input to generate a personalized Open Source Manifesto. [cite: 256, 257]
+| Script | Name | Description |
+|--------|------|-------------|
+| script1.sh | System Identity Report | Displays Linux distro, kernel version, current user, uptime, date, and OS license |
+| script2.sh | FOSS Package Inspector | Checks if Python 3 is installed, retrieves version and description, prints a philosophy note via case statement |
+| script3.sh | Disk and Permission Auditor | Loops through key system directories and reports permissions, ownership, and disk usage. Also checks Python config directory |
+| script4.sh | Log File Analyzer | Reads a log file line by line, counts keyword matches, and prints the last 5 matching lines |
+| script5.sh | Open Source Manifesto Generator | Asks 3 interactive questions and generates a personalised open-source manifesto saved to a .txt file |
 
-## How to Run the Scripts
+---
+
+## How to Run Each Script on Linux
+
 ### Prerequisites
-* [cite_start]A Linux environment (Ubuntu 24.04.1 LTS recommended). [cite: 17, 73]
-* [cite_start]Python 3 installed. [cite: 74]
+- Ubuntu or any Debian-based Linux system
+- Python 3 installed: `sudo apt install python3`
+- Bash shell (default on all Linux systems)
 
-### Execution Steps
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/omkumb21/oss-audit-24BAI10133.git](https://github.com/omkumb21/oss-audit-24BAI10133.git)
-   cd oss-audit-24BAI10133
+### Steps
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/<your-username>/oss-audit-24BAI10133.git
+cd oss-audit-24BAI10133
+```
+
+**2. Make all scripts executable**
+```bash
+chmod +x script1.sh script2.sh script3.sh script4.sh script5.sh
+```
+
+**3. Run Script 1 — System Identity Report**
+```bash
+./script1.sh
+```
+
+**4. Run Script 2 — FOSS Package Inspector**
+```bash
+./script2.sh
+```
+
+**5. Run Script 3 — Disk and Permission Auditor**
+```bash
+./script3.sh
+```
+
+**6. Run Script 4 — Log File Analyzer**
+```bash
+./script4.sh /var/log/dpkg.log install
+```
+> Usage: `./script4.sh <logfile_path> <keyword>`
+
+**7. Run Script 5 — Open Source Manifesto Generator**
+```bash
+./script5.sh
+```
+> This script is interactive — it will ask you 3 questions and save your manifesto to `manifesto_<username>.txt`
+
+---
+
+## Dependencies
+
+- `bash` — available by default on all Linux systems
+- `python3` — install with `sudo apt install python3`
+- `dpkg` — available by default on Debian/Ubuntu
+- `lsb_release` — install with `sudo apt install lsb-release` if missing
+- `systemd` — available by default on Ubuntu 24.04
