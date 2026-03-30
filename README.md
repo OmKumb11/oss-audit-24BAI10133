@@ -1,5 +1,4 @@
 # oss-audit-24BAI10133
-# oss-audit-24BAI10133
 
 **Student Name:** Om Pramod Kumbhar  
 **Registration Number:** 24BAI10133  
